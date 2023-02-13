@@ -54,6 +54,7 @@ textarea {
   border-color: #b6b6b6;
   border-radius: 5px;
   font-size: 18px;
+  font-family: "Proza Libre", sans-serif;
 }
 
 textarea:focus {

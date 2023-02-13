@@ -9,5 +9,10 @@ var data = {
 
 window.addEventListener('beforeunload', event => {
   var steralData = JSON.stringify(data);
-  localStorage.setItem('javascript-local-storage', steralData);
+  localStorage.setItem('code-journal', steralData);
 });
+
+if (localStorage.getItem('code-journal')) {
+  var previous = localStorage.getItem('code-journal');
+  data = JSON.parse(previous);
+}
