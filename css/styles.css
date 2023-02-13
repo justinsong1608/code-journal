@@ -1,0 +1,77 @@
+header {
+  background-color: #552b80;
+  color: rgb(250, 249, 251);
+  font-family: "Proza Libre", sans-serif;
+}
+
+main {
+  background-color: #f0f0f0;
+}
+
+h1 {
+  font-family: "Proza Libre", sans-serif;
+  font-weight: bolder;
+}
+
+form {
+  padding-bottom: 2em;
+}
+
+img {
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+label {
+  font-family: "Proza Libre", sans-serif;
+  font-weight: bolder;
+}
+
+input {
+  width: 100%;
+  margin-bottom: 2em;
+  margin-top: 0.75em;
+  padding: 0.5em;
+  border-color: #b6b6b6;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 0.1em;
+  font-size: 18px;
+}
+
+input:focus {
+  outline: #552b80;
+  border-color: #552b80;
+}
+
+textarea {
+  width: 100%;
+  resize: none;
+  margin-bottom: 1.25em;
+  margin-top: 0.75em;
+  padding: 0.75em;
+  border-style: solid;
+  border-color: #b6b6b6;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+textarea:focus {
+  outline: #552b80;
+  border-color: #552b80;
+}
+
+button {
+  float: right;
+  background-color: #552b80;
+  color: rgb(250, 249, 251);
+  font-family: "Proza Libre", sans-serif;
+  border-radius: 5px;
+  border: none;
+  width: 15%;
+  padding: 1.5%;
+}
+
+button:hover {
+  cursor: pointer;
+}
