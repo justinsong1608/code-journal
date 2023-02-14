@@ -62,3 +62,14 @@ document.addEventListener('DOMContentLoaded', event => {
     $uList.appendChild(renderEntry(data.entries[i]));
   }
 });
+
+var $dataView = document.querySelector('div[data-view="entries"]');
+function toggleNoEntries() {
+  var $noEntry = document.querySelector('li');
+  if ($dataView === undefined) {
+    $noEntry.setAttribute('class', 'row');
+  } else {
+    $noEntry.setAttribute('class', 'hidden');
+  }
+}
+toggleNoEntries();
