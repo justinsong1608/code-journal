@@ -63,29 +63,30 @@ document.addEventListener('DOMContentLoaded', event => {
   }
 });
 
-var $entryView = document.querySelector('div[data-view="entries"]');
-var $entryForm = document.querySelector('div[data-view="entries"]');
-
+var $noEntry = document.querySelectorAll('li');
 function toggleNoEntries() {
-  var $noEntry = document.querySelector('li');
-  if ($entryView === undefined) {
-    $noEntry.setAttribute('class', 'row');
+  if ($noEntry.length === 1) {
+    $noEntry[0].setAttribute('class', 'row');
   } else {
-    $noEntry.setAttribute('class', 'hidden');
+    $noEntry[0].setAttribute('class', 'hidden');
   }
 }
 toggleNoEntries();
 
+var $entryForm = document.querySelector('div[data-view=entry-form]');
+var $entriesView = document.querySelector('div[data-view=entries]');
 function viewSwap(view) {
-  var target = view.target.getAttribute('data-view');
-  if (target === 'entries') {
-    $entryForm.classList.add('hidden');
-    $entryView.classList.remove('hidden');
-    data.view = target;
-  } else if (target === 'entry-form') {
-    $entryForm.classList.remove('hidden');
-    $entryView.classList.add('hidden');
-    data.view = target;
+  if (view === 'entries') {
+    $entriesView.setAttribute('class', '');
+    data.view = view;
+    $entryForm.setAttribute('class', 'hidden');
+  } else if (view === 'entry-form') {
+    $entryForm.setAttribute('class', '');
+    data.view = view;
+    $entriesView.setAttribute('class', 'hidden');
   }
 }
-viewSwap();
+
+var $aTag = document.querySelector('.entries-tag');
+
+$aTag.addEventListener('click', function () { viewSwap('entries'); });

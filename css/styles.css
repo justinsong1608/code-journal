@@ -100,3 +100,13 @@ ul {
 #no-entry {
   text-align: center;
 }
+
+.entries-tag {
+  text-decoration: none;
+  color: rgb(250, 249, 251);
+  font-family: "Proza Libre", sans-serif;
+  font-size: 1.25rem;
+  margin-left: 2rem;
+  margin-top: auto;
+  margin-bottom: auto;
+}
