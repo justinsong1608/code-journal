@@ -23,3 +23,39 @@ function save(event) {
 }
 
 $journal.addEventListener('submit', save);
+
+function renderEntry(entry) {
+  var $entryList = document.createElement('li');
+  document.querySelector('ul').appendChild($entryList);
+
+  var $divRow = document.createElement('div');
+  $divRow.setAttribute('class', 'row');
+  $entryList.appendChild($divRow);
+
+  var $divCol = document.createElement('div');
+  $divCol.setAttribute('class', 'column-half');
+  $divRow.appendChild($divCol);
+
+  var $imgTag = document.createElement('img');
+  $imgTag.setAttribute('src', entry.photo);
+  $imgTag.setAttribute('class', 'images-entry upward');
+  $divCol.appendChild($imgTag);
+
+  var $divColHalf = document.createElement('div');
+  $divColHalf.setAttribute('class', 'column-half');
+  $divRow.appendChild($divColHalf);
+
+  var $hTwo = document.createElement('h2');
+  var $hTwoTitle = entry.title.textContent;
+  $hTwo.appendChild($hTwoTitle);
+  $divColHalf.appendChild($hTwo);
+
+  var $para = document.createElement('p');
+  var $paraNotes = entry.notes.textContent;
+  $para.appendChild($paraNotes);
+  $divColHalf.appendChild($para);
+
+  return $entryList;
+}
+
+renderEntry();
