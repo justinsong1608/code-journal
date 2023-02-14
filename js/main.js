@@ -88,5 +88,6 @@ function viewSwap(view) {
 }
 
 var $aTag = document.querySelector('.entries-tag');
-
+var $aButton = document.querySelector('#button-style');
 $aTag.addEventListener('click', function () { viewSwap('entries'); });
+$aButton.addEventListener('click', function () { viewSwap('entry-form'); });
