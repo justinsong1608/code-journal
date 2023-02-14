@@ -63,13 +63,29 @@ document.addEventListener('DOMContentLoaded', event => {
   }
 });
 
-var $dataView = document.querySelector('div[data-view="entries"]');
+var $entryView = document.querySelector('div[data-view="entries"]');
+var $entryForm = document.querySelector('div[data-view="entries"]');
+
 function toggleNoEntries() {
   var $noEntry = document.querySelector('li');
-  if ($dataView === undefined) {
+  if ($entryView === undefined) {
     $noEntry.setAttribute('class', 'row');
   } else {
     $noEntry.setAttribute('class', 'hidden');
   }
 }
 toggleNoEntries();
+
+function viewSwap(view) {
+  var target = view.target.getAttribute('data-view');
+  if (target === 'entries') {
+    $entryForm.classList.add('hidden');
+    $entryView.classList.remove('hidden');
+    data.view = target;
+  } else if (target === 'entry-form') {
+    $entryForm.classList.remove('hidden');
+    $entryView.classList.add('hidden');
+    data.view = target;
+  }
+}
+viewSwap();
