@@ -46,13 +46,11 @@ function renderEntry(entry) {
   $divRow.appendChild($divColHalf);
 
   var $hTwo = document.createElement('h2');
-  var $hTwoTitle = entry.title.textContent;
-  $hTwo.appendChild($hTwoTitle);
+  $hTwo.textContent = entry.title;
   $divColHalf.appendChild($hTwo);
 
   var $para = document.createElement('p');
-  var $paraNotes = entry.notes.textContent;
-  $para.appendChild($paraNotes);
+  $para.textContent = entry.notes;
   $divColHalf.appendChild($para);
 
   return $entryList;

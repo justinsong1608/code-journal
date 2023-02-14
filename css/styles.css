@@ -94,4 +94,9 @@ button:hover {
 
 ul {
   list-style: none;
+  margin-right: 2.5em;
+}
+
+#no-entry {
+  text-align: center;
 }
