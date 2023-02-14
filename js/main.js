@@ -58,4 +58,9 @@ function renderEntry(entry) {
   return $entryList;
 }
 
-renderEntry();
+var $uList = document.querySelector('ul');
+document.addEventListener('DOMContentLoaded', event => {
+  for (var i = 0; i < data.entries.length; i++) {
+    $uList.appendChild(renderEntry(data.entries[i]));
+  }
+});
