@@ -77,15 +77,25 @@ textarea:focus {
   border-color: #552b80;
 }
 
-button {
+#save {
   float: right;
   background-color: #552b80;
   color: rgb(250, 249, 251);
   font-family: "Proza Libre", sans-serif;
   border-radius: 5px;
   border: none;
-  width: 15%;
-  padding: 1.5%;
+  width: 4rem;
+  padding: 0.4rem;
+}
+
+#delete {
+  font-family: "Proza Libre", sans-serif;
+  color: red;
+  border: none;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  margin-top: 0.5rem;
+  padding: 0;
 }
 
 button:hover {
