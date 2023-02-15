@@ -15,15 +15,29 @@ function save(event) {
   list.title = $journal.elements.title.value;
   list.photo = $journal.elements.photo.value;
   list.notes = $journal.elements.notes.value;
-  list.entryId = data.nextEntryId;
-  data.nextEntryId += 1;
-  data.entries.unshift(list);
   $img.setAttribute('src', '/images/placeholder-image-square.jpg');
   $journal.reset();
-  $uList.prepend(renderEntry(list));
   viewSwap('entries');
   if ($noEntry.className === 'column-full no-entry') {
     toggleNoEntries();
+  }
+
+  if (data.editing === null) {
+    list.entryId = data.nextEntryId;
+    data.nextEntryId += 1;
+    data.entries.unshift(list);
+    $uList.prepend(renderEntry(list));
+  } else if (data.editing !== null) {
+    list.entryId = data.editing.entryId;
+    for (var i = 0; i < data.entries.length; i++) {
+      if (data.entries[i].entryId === list.entryId) {
+        data.entries[i] = list;
+        var $dataId = document.querySelector('[data-entry-id=' + CSS.escape(list.entryId) + ']');
+        $uList.replaceChild(renderEntry(list), $dataId);
+        $heading.textContent = 'New Entry';
+        data.editing = null;
+      }
+    }
   }
 }
 
@@ -126,4 +140,5 @@ function handleClick(event) {
   $journal.elements.photo.value = data.editing.photo;
   $journal.elements.notes.value = data.editing.notes;
   $heading.textContent = 'Edit Entry';
+  $img.setAttribute('src', data.editing.photo);
 }
