@@ -31,7 +31,6 @@ $journal.addEventListener('submit', save);
 
 function renderEntry(entry) {
   var $entryList = document.createElement('li');
-  document.querySelector('ul').appendChild($entryList);
 
   var $divRow = document.createElement('div');
   $divRow.setAttribute('class', 'row');
