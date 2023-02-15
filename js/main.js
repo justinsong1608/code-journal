@@ -32,6 +32,7 @@ $journal.addEventListener('submit', save);
 function renderEntry(entry) {
   var $entryList = document.createElement('li');
   $entryList.setAttribute('data-entry-id', entry.entryId);
+  $entryList.setAttribute('class', 'item');
 
   var $divRow = document.createElement('div');
   $divRow.setAttribute('class', 'row');
@@ -105,3 +106,24 @@ var $aTag = document.querySelector('.entries-tag');
 var $aButton = document.querySelector('#button-style');
 $aTag.addEventListener('click', function () { viewSwap('entries'); });
 $aButton.addEventListener('click', function () { viewSwap('entry-form'); });
+
+$uList.addEventListener('click', handleClick);
+
+var $heading = document.querySelector('.heading');
+function handleClick(event) {
+  if (event.target.nodeName === 'I') {
+    viewSwap('entry-form');
+  }
+
+  var $closest = event.target.closest('.item');
+  for (var i = 0; i < data.entries.length; i++) {
+    if (data.entries[i].entryId.toString() === $closest.getAttribute('data-entry-id')) {
+      data.editing = data.entries[i];
+    }
+  }
+
+  $journal.elements.title.value = data.editing.title;
+  $journal.elements.photo.value = data.editing.photo;
+  $journal.elements.notes.value = data.editing.notes;
+  $heading.textContent = 'Edit Entry';
+}
