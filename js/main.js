@@ -66,16 +66,21 @@ document.addEventListener('DOMContentLoaded', event => {
   for (var i = 0; i < data.entries.length; i++) {
     $uList.appendChild(renderEntry(data.entries[i]));
   }
+  viewSwap(data.view);
+  if ($uList.children.length > 0) {
+    toggleNoEntries();
+  }
 });
 
 var $noEntry = document.querySelector(' .no-entry');
 function toggleNoEntries() {
-  if ($noEntry.className === 'row no-entry') {
-    $noEntry.className = 'row no-entry hidden';
+  if ($noEntry.className === 'column-full no-entry') {
+    $noEntry.className = 'column-full no-entry hidden';
   } else {
-    $noEntry.className = 'row no-entry';
+    $noEntry.className = 'column-full no-entry';
   }
 }
+$uList.addEventListener('click', toggleNoEntries);
 
 var $entryForm = document.querySelector('div[data-view=entry-form]');
 var $entriesView = document.querySelector('div[data-view=entries]');
