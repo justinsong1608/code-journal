@@ -97,6 +97,13 @@ ul {
   margin-right: 2.5em;
 }
 
+i {
+  color: #552b80;
+  margin-top: -2.4rem;
+  float: right;
+  cursor: pointer;
+}
+
 #no-entry {
   text-align: center;
 }

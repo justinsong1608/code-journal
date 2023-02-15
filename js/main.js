@@ -31,6 +31,7 @@ $journal.addEventListener('submit', save);
 
 function renderEntry(entry) {
   var $entryList = document.createElement('li');
+  $entryList.setAttribute('data-entry-id', entry.entryId);
 
   var $divRow = document.createElement('div');
   $divRow.setAttribute('class', 'row');
@@ -52,6 +53,11 @@ function renderEntry(entry) {
   var $hTwo = document.createElement('h2');
   $hTwo.textContent = entry.title;
   $divColHalf.appendChild($hTwo);
+
+  var $iTag = document.createElement('i');
+  $iTag.setAttribute('class', 'fa fa-pencil fa-xl');
+  $iTag.setAttribute('aria-hidden', 'true');
+  $divColHalf.appendChild($iTag);
 
   var $para = document.createElement('p');
   $para.textContent = entry.notes;
