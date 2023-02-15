@@ -8,16 +8,31 @@ body {
   background-color: #f0f0f0;
 }
 
-h1 {
+h1,
+h2 {
   font-family: "Proza Libre", sans-serif;
   font-weight: bolder;
+}
+
+p {
+  font-family: "Proza Libre", sans-serif;
+  width: 100%;
+  line-height: 1.5em;
+}
+
+.upward {
+  margin-top: 1.6em;
+}
+
+img.images-entry {
+  width: 100%;
 }
 
 form {
   padding-bottom: 2em;
 }
 
-img {
+img.image {
   width: 100%;
   margin-bottom: 1em;
 }
@@ -75,4 +90,38 @@ button {
 
 button:hover {
   cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  margin-right: 2.5em;
+}
+
+#no-entry {
+  text-align: center;
+}
+
+.entries-tag {
+  text-decoration: none;
+  color: rgb(250, 249, 251);
+  font-family: "Proza Libre", sans-serif;
+  font-size: 1.25rem;
+  margin-left: 2rem;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#button-style {
+  text-decoration: none;
+  text-align: center;
+  color: rgb(250, 249, 251);
+  font-family: "Proza Libre", sans-serif;
+  background-color: #552b80;
+  display: block;
+  border-radius: 5px;
+  height: 2rem;
+  width: 4rem;
+  padding: 0.4rem 0 0;
+  margin-top: auto;
+  margin-bottom: auto;
 }
