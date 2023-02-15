@@ -20,6 +20,11 @@ function save(event) {
   data.entries.unshift(list);
   $img.setAttribute('src', '/images/placeholder-image-square.jpg');
   $journal.reset();
+  $uList.prepend(renderEntry(list));
+  viewSwap('entries');
+  if ($noEntry.className === 'row no-entry') {
+    toggleNoEntries();
+  }
 }
 
 $journal.addEventListener('submit', save);
@@ -63,15 +68,14 @@ document.addEventListener('DOMContentLoaded', event => {
   }
 });
 
-var $noEntry = document.querySelectorAll('li');
+var $noEntry = document.querySelector(' .no-entry');
 function toggleNoEntries() {
-  if ($noEntry.length === 1) {
-    $noEntry[0].setAttribute('class', 'row');
+  if ($noEntry.className === 'row no-entry') {
+    $noEntry.className = 'row no-entry hidden';
   } else {
-    $noEntry[0].setAttribute('class', 'hidden');
+    $noEntry.className = 'row no-entry';
   }
 }
-toggleNoEntries();
 
 var $entryForm = document.querySelector('div[data-view=entry-form]');
 var $entriesView = document.querySelector('div[data-view=entries]');
