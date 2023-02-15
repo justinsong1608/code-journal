@@ -22,7 +22,7 @@ function save(event) {
   $journal.reset();
   $uList.prepend(renderEntry(list));
   viewSwap('entries');
-  if ($noEntry.className === 'row no-entry') {
+  if ($noEntry.className === 'column-full no-entry') {
     toggleNoEntries();
   }
 }
