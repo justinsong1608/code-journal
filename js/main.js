@@ -194,4 +194,8 @@ $confirm.addEventListener('click', function () {
   $modal.className = 'modal hidden';
   $overlay.className = 'nothing';
   viewSwap('entries');
+  $heading.textContent = 'New Entry';
+  $img.setAttribute('src', '/images/placeholder-image-square.jpg');
+  $delete.classList.add('clear');
+  $journal.reset();
 });
