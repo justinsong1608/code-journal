@@ -142,3 +142,14 @@ function handleClick(event) {
   $heading.textContent = 'Edit Entry';
   $img.setAttribute('src', data.editing.photo);
 }
+
+var $delete = document.querySelector('#delete');
+var $modal = document.querySelector('.modal');
+var $overlay = document.querySelector('.nothing');
+
+function showContent(event) {
+  $modal.className = 'modal show';
+  $overlay.className = 'nothing overlay';
+}
+
+$delete.addEventListener('click', showContent);

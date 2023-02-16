@@ -55,12 +55,19 @@
         </div>
 
         <div class="column-full">
-          <button id="delete">Delete Entry</button>
-          <button id="save">SAVE</button>
+          <button id="delete" type="button">Delete Entry</button>
+          <button id="save" type="submit">SAVE</button>
         </div>
+        <div class="modal clear">
+          <h2 class="title-content">
+            Are you sure you want to delete this entry&#63;
+          </h2>
+          <button id="cancel-button" type="button">CANCEL</button>
+          <button id="confirm-button" type="button">CONFIRM</button>
+        </div>
+        <div class="nothing"></div>
       </form>
     </div>
-
     <div data-view="entries" class="row hidden">
       <div class="column-full-flex-button">
         <h1>Entries</h1>

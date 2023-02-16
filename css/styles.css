@@ -95,7 +95,6 @@ textarea:focus {
   text-decoration: underline;
   text-decoration-skip-ink: none;
   margin-top: 0.5rem;
-  padding: 0;
 }
 
 button:hover {
@@ -141,4 +140,60 @@ i {
   padding: 0.4rem 0 0;
   margin-top: auto;
   margin-bottom: auto;
+}
+
+#cancel-button {
+  border-radius: 5px;
+  background-color: #b6b6b6;
+  border: transparent;
+  height: 2.5rem;
+  width: 7.5rem;
+  margin-top: 1.5rem;
+  font-size: 1.6rem;
+}
+
+#confirm-button {
+  border-radius: 5px;
+  background-color: #dc2626;
+  border: transparent;
+  color: rgb(250, 249, 251);
+  height: 2.5rem;
+  width: 9rem;
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+  float: right;
+}
+
+.title-content {
+  font-size: 1.2rem;
+}
+
+.clear {
+  display: none;
+}
+
+.show {
+  background-color: white;
+  border-radius: 5px;
+  border: solid black;
+  padding: 1rem;
+}
+
+.modal {
+  position: fixed;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, 50%);
+  z-index: 10;
+  width: 28rem;
+}
+
+.overlay {
+  position: fixed;
+  opacity: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
 }
