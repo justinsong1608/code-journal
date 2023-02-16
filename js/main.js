@@ -147,9 +147,30 @@ var $delete = document.querySelector('#delete');
 var $modal = document.querySelector('.modal');
 var $overlay = document.querySelector('.nothing');
 
+function deleteShow(event) {
+  if (event.target.nodeName === 'I') {
+    $delete.classList.remove('clear');
+  }
+}
+
+var $save = document.querySelector('#save');
+function deleteClear(event) {
+  $delete.classList.add('clear');
+}
+
+$uList.addEventListener('click', deleteShow);
+$save.addEventListener('click', deleteClear);
 function showContent(event) {
   $modal.className = 'modal show';
   $overlay.className = 'nothing overlay';
 }
 
 $delete.addEventListener('click', showContent);
+
+var $cancel = document.querySelector('#cancel-button');
+function cancelContent(event) {
+  $modal.className = 'modal hidden';
+  $overlay.className = 'nothing';
+}
+
+$cancel.addEventListener('click', cancelContent);
