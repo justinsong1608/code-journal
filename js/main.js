@@ -100,7 +100,6 @@ function toggleNoEntries() {
     $noEntry.className = 'column-full no-entry';
   }
 }
-$uList.addEventListener('click', toggleNoEntries);
 
 var $entryForm = document.querySelector('div[data-view=entry-form]');
 var $entriesView = document.querySelector('div[data-view=entries]');
@@ -174,3 +173,25 @@ function cancelContent(event) {
 }
 
 $cancel.addEventListener('click', cancelContent);
+
+var $confirm = document.querySelector('#confirm-button');
+
+$confirm.addEventListener('click', function () {
+  for (var i = 0; i < data.entries.length; i++) {
+    if (data.entries[i].entryId === data.editing.entryId) {
+      data.entries.splice(i, 1);
+    }
+  }
+
+  var $dataDom = document.querySelector('[data-entry-id=' + CSS.escape(data.editing.entryId) + ']');
+  $dataDom.remove();
+
+  if ($uList.children.length === 0) {
+    toggleNoEntries();
+  }
+
+  data.editing = null;
+  $modal.className = 'modal hidden';
+  $overlay.className = 'nothing';
+  viewSwap('entries');
+});
